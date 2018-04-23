@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
 
-import { createRenderer } from 'fela'
-import StyleProvider from './components/styleProvider.js'
+import { createRenderer } from "fela";
+import StyleProvider from "./providers/styleProvider.js";
 
 /**
  * Our Basic React app.
@@ -13,15 +13,16 @@ import StyleProvider from './components/styleProvider.js'
  * Passes Fela through the context, renders to the root el
  */
 const init = () => {
-  const container = document.getElementById('root')
-  const styleRenderer = createRenderer()
+  const container = document.getElementById("root");
+  const styleRenderer = createRenderer();
 
   ReactDOM.render(
     <StyleProvider renderer={styleRenderer}>
       <App />
     </StyleProvider>,
-    container)
-}
+    container,
+  );
+};
 
-init()
-registerServiceWorker()
+init();
+registerServiceWorker();
