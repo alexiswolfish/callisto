@@ -20,13 +20,13 @@ export default class About extends Component {
    * @param {string} desc
    * @param {int} index
    */
-  section(style, header, desc, index, extraRules) {
+  section(style, header, desc, index) {
     return (
       <div className={style([sectionPositionRules])}>
         <h2 className={style([h2, headerRule])}>{header}</h2>
         <p className={style([uiBody, descRule(index)])}>{desc}</p>
         <Button extraRules={buttonRule}>Learn more</Button>
-        <div className={style([accentRule, accentJumbo])}>
+        <div className={style([accentRule(index), accentJumbo])}>
           {index.toString().length < 2 ? "0" + index : index}
         </div>
       </div>
@@ -76,7 +76,7 @@ const flexContainerRules = {
     padding: "60px 40px",
   },
   "@media (max-width: 768px)": {
-    padding: "30px 20px",
+    padding: "40px 20px",
   },
 };
 const halfSizeContainer = {
@@ -106,6 +106,7 @@ const sectionPositionRules = {
     paddingRight: "20px",
     marginBottom: "30px",
   },
+  "@media (max-width: 768px)": { padding: 0 },
 };
 const headerRule = {
   paddingBottom: "30px",
@@ -130,30 +131,40 @@ const descRule = index => {
 };
 const buttonRule = {
   alignSelf: "flex-end",
+  zIndex: zIndex.foreground,
   "@media (max-width: 1024px)": {
     alignSelf: "center",
   },
 };
-const accentRule = {
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  zIndex: zIndex.background,
-  "@media (max-width: 1024px)": {
-    left: "-60px",
-  },
+const accentRule = index => {
+  const rightResponsiveRules = {
+    left: "initial",
+    right: "-40px",
+  };
+  return {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    zIndex: zIndex.background,
+    "@media (max-width: 1024px)": {
+      left: "-60px",
+    },
+    "@media (max-width: 768px)": index == 1 ? rightResponsiveRules : {},
+  };
 };
 const accentRuleResponsiveTop = {
   "@media (max-width: 1024px)": {
     alignSelf: "flex-start",
     paddingLeft: "10px",
     paddingBottom: "20px",
+    "@media (max-width: 768px)": { padding: 0 },
   },
 };
 const accentRuleResponsiveBottom = {
   "@media (max-width: 1024px)": {
     alignSelf: "flex-end",
     paddingRight: "10px",
+    "@media (max-width: 768px)": { padding: 0 },
   },
 };
 const accentLineRule = theme => {
@@ -169,7 +180,11 @@ const accentLineRule = theme => {
       right: "-40px",
       top: "-150px",
     },
-    "@media (max-width: 768px)": { display: "none" },
+    "@media (max-width: 768px)": {
+      height: "75%",
+      right: "10px",
+      top: "-40px",
+    },
   };
 };
 const accentLineInsetRule = theme => {
@@ -185,7 +200,7 @@ const accentLineInsetRule = theme => {
       left: "20px",
       bottom: "-60px",
     },
-    "@media (max-width: 768px)": { display: "none" },
+    "@media (max-width: 768px)": { height: "100%" },
   };
 };
 const scrollLabel = {
@@ -195,6 +210,7 @@ const scrollLabel = {
   top: "20px",
   color: "white",
   textAlign: "right",
+  "@media (max-width: 768px)": { display: "none" },
 };
 
 const p1 =
