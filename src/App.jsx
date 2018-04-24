@@ -5,19 +5,23 @@ import Section from "./components/Section";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Products from "./components/Products";
 
 import { DarkTheme, LightTheme } from "./styles/theme.js";
+import { flexColumn } from "./styles/util.js";
 
 // might need to be updated to point at the public folder
 const imgUrl = fileName => {
   return fileName;
 };
 
-const extraHeroRules = {
-  display: "flex",
-  flexDirection: "column",
-};
-
+/**
+ * The main component for our app
+ *
+ * The page is chopped into sections, each receiving a theme
+ * that sets the text/bg/ui colors. Content is implemented as
+ * individual components for organization vs. reusability
+ */
 class App extends Component {
   render() {
     return (
@@ -25,7 +29,7 @@ class App extends Component {
         <Section
           theme={DarkTheme}
           bgImgUrl={imgUrl("faces-background.png")}
-          extraRules={extraHeroRules}
+          extraRules={flexColumn}
         >
           <Nav startIndex={0} />
           <Hero />
@@ -34,7 +38,7 @@ class App extends Component {
           <About />
         </Section>
         <Section theme={DarkTheme}>
-          <h1>Our Products</h1>
+          <Products />
         </Section>
       </main>
     );

@@ -21,9 +21,12 @@ export const flexColumnEnd = {
   justifyContent: "flex-end",
 };
 
-export const container = {
-  width: "100%",
-  maxWidth: "1400px",
-  margin: "0 auto",
-  boxSizing: "border-box",
+export const container = theme => {
+  return {
+    width: "100%",
+    maxWidth: "1400px",
+    margin: "0 auto",
+    boxSizing: "border-box",
+    color: theme.color.text.normal,
+  };
 };

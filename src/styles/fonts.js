@@ -1,3 +1,9 @@
+/**
+ * Master list of font classes.
+ * Normally you'd bake these into design system components
+ * but for the sake of time, we'll declare them here as a const.
+ */
+
 // helper to join the font family strings, accounts for font names with spaces
 const fontFamily = (...fonts): string => {
   return fonts
@@ -101,7 +107,6 @@ export const h2 = theme => {
     letterSpacing: "0.01em",
     lineHeight: "1.3em",
     fontWeight: 700,
-    color: theme.color.text.normal,
   };
 };
 
@@ -114,4 +119,10 @@ export const h3 = theme => {
     fontWeight: 400,
     color: theme.color.text.dark,
   };
+};
+
+// Colors are set to text.normal by default by
+// the container rule. Override specific styles
+export const accentColorRule = theme => {
+  return { color: theme.color.accent.normal };
 };

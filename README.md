@@ -22,4 +22,4 @@ It generates atomic css for an incredibly performant bundle size and lets you re
 
 ---
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), which created an initial README with all kinds of howtos and troubleshooting help. You can find that original readme [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)

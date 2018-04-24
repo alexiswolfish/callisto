@@ -24,6 +24,7 @@ const sectionPositionRules = {
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
+  marginBottom: "60px",
 };
 const headerRule = {
   paddingBottom: "30px",
@@ -56,7 +57,7 @@ const accentLineRule = theme => {
 };
 const accentLineInsetRule = theme => {
   return {
-    height: "60%",
+    height: "70%",
     borderRight: `1px solid ${theme.color.border.accent}`,
     position: "absolute",
     bottom: 0,
