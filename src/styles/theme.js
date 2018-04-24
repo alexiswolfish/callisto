@@ -25,12 +25,19 @@ export const DarkTheme = {
       light: taupeLighter,
     },
     button: {
-      fill: transparentWhite(0.9),
+      fill: transparentWhite(1),
       hover: transparentWhite(1),
       text: blueDarker,
     },
     background: blueDesat,
-    border: transparentWhite(1),
+    border: {
+      normal: transparentWhite(1),
+      accent: taupe,
+    },
+  },
+  size: {
+    container: "1000px",
+    nav: "840px;",
   },
 };
 
@@ -52,5 +59,9 @@ export const LightTheme = {
     },
     background: transparentWhite(1),
     border: taupe,
+  },
+  size: {
+    container: "1000px",
+    nav: "840px;",
   },
 };

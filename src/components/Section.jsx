@@ -5,6 +5,7 @@ import ClassRenderer from "./classRenderer.js";
 
 const bgRule = (theme, bgImgUrl) => {
   return {
+    position: "relative",
     height: "100vh",
     maxHeight: "850px",
     width: "100%",
@@ -18,13 +19,13 @@ const bgRule = (theme, bgImgUrl) => {
 
 export default class Section extends Component {
   render() {
-    const { children, bgImgUrl } = this.props;
+    const { children, bgImgUrl, extraRules } = this.props;
 
     return (
       <ThemeProvider theme={this.props.theme}>
         <ClassRenderer>
           {(style, theme) => (
-            <section className={style(bgRule(theme, bgImgUrl))}>
+            <section className={style([bgRule(theme, bgImgUrl), extraRules])}>
               {this.props.children}
             </section>
           )}

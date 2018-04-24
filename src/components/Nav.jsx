@@ -2,11 +2,14 @@ import React, { Component } from "react";
 
 import ClassRenderer from "./classRenderer.js";
 import logo from "../callisto-logo.svg";
+
 import { uiCaps } from "../styles/fonts.js";
+import { zIndex } from "../styles/zIndex.js";
 
 const navRule = {
   display: "flex",
   padding: "20px 50px",
+  zIndex: zIndex.foreground,
 };
 
 const ulRule = theme => {
@@ -17,7 +20,7 @@ const ulRule = theme => {
     position: "relative",
     width: "100%",
     maxWidth: "840px",
-    borderBottom: `1px solid ${theme.color.border}`,
+    borderBottom: `1px solid ${theme.color.border.normal}`,
     margin: "0 auto",
   };
 };
@@ -30,6 +33,8 @@ const liRule = (theme, isSelected) => {
   };
 };
 
+// Normally we'd want to keep strings somewhere centralized
+// so they can be translated, but this is fine for something quick
 const items = [
   "Get involved",
   "Who we are",

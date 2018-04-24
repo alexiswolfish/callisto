@@ -43,5 +43,45 @@ export const uiBody = {
   fontFamily: uiFontFamily,
   fontSize: "15px",
   lineHeight: "1.4em",
-  letterSpacing: "0.73px",
+  letterSpacing: "0.06em",
+};
+
+export const uiCaption = {
+  fontFamily: uiFontFamily,
+  fontSize: "13px",
+  lineHeight: "1.2em",
+  letterSpacing: "0.06em",
+};
+
+export const accentItalic = theme => {
+  return {
+    fontFamily: accentFontFamily,
+    fontSize: "24px",
+    lineHeight: "1.3em",
+    fontStyle: "italic",
+    color: theme.color.text.dark,
+    fontWeight: 300,
+  };
+};
+
+export const h1 = theme => {
+  return {
+    fontFamily: displaySerifFontFamily,
+    fontSize: "57px",
+    letterSpacing: "0.01em",
+    lineHeight: "1.3em",
+    fontWeight: 900,
+    color: theme.color.text.dark,
+  };
+};
+
+export const h3 = theme => {
+  return {
+    fontFamily: accentFontFamily,
+    fontSize: "32px",
+    letterSpacing: "0.01em",
+    lineHeight: "1.3em",
+    fontWeight: 400,
+    color: theme.color.text.dark,
+  };
 };

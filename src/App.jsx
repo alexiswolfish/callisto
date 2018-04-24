@@ -3,26 +3,31 @@ import "./App.css";
 
 import Section from "./components/Section";
 import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+
 import { DarkTheme, LightTheme } from "./styles/theme.js";
 
-const h1 = theme => {
-  return {
-    color: "pink",
-  };
-};
-
-//TODO[wolfe]: figure out where the public folder points to
+// might need to be updated to point at the public folder
 const imgUrl = fileName => {
   return fileName;
+};
+
+const extraHeroRules = {
+  display: "flex",
+  flexDirection: "column",
 };
 
 class App extends Component {
   render() {
     return (
       <main>
-        <Section theme={DarkTheme} bgImgUrl={imgUrl("faces-background.png")}>
+        <Section
+          theme={DarkTheme}
+          bgImgUrl={imgUrl("faces-background.png")}
+          extraRules={extraHeroRules}
+        >
           <Nav startIndex={0} />
-          {/* <Overview /> */}
+          <Hero />
         </Section>
         <Section theme={LightTheme}>
           <h1>Who we are</h1>
