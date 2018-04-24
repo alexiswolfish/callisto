@@ -8,7 +8,7 @@ const blueDarker = "rgba(37, 37, 55, 1)";
 const blueDarkest = "rgba(26, 26, 30, 1)";
 
 const taupe = "rgba(184, 169, 163, 1)";
-const taupeLighter = "rgba(184, 169, 163)";
+const taupeLighter = "rgba(184, 169, 163, 0.3)";
 
 /**
  * Maps color to useage for flexibility
@@ -35,33 +35,14 @@ export const DarkTheme = {
       accent: taupe,
     },
   },
-  size: {
-    container: "1000px",
-    nav: "840px;",
-  },
 };
 
 export const LightTheme = {
   color: {
-    text: {
-      lighter: blueDesat,
-      normal: blueDarkest,
-      dark: transparentWhite(0.8),
-    },
-    accent: {
-      normal: taupe,
-      light: taupeLighter,
-    },
-    button: {
-      fill: blue,
-      hover: blueDarker,
-      text: transparentWhite(0.9),
-    },
+    text: { lighter: blueDesat, normal: blueDarker, dark: blueDarkest },
+    accent: { normal: taupe, light: taupeLighter },
+    button: { fill: blue, hover: blue, text: transparentWhite(0.9) },
     background: transparentWhite(1),
-    border: taupe,
-  },
-  size: {
-    container: "1000px",
-    nav: "840px;",
+    border: { normal: taupe, accent: taupe },
   },
 };

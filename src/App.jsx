@@ -4,6 +4,7 @@ import "./App.css";
 import Section from "./components/Section";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 import { DarkTheme, LightTheme } from "./styles/theme.js";
 
@@ -30,7 +31,7 @@ class App extends Component {
           <Hero />
         </Section>
         <Section theme={LightTheme}>
-          <h1>Who we are</h1>
+          <About />
         </Section>
         <Section theme={DarkTheme}>
           <h1>Our Products</h1>

@@ -8,6 +8,7 @@ const bgRule = (theme, bgImgUrl) => {
     position: "relative",
     height: "100vh",
     maxHeight: "850px",
+    minHeight: "620px",
     width: "100%",
     backgroundColor: theme.color.background,
     color: theme.color.text.normal,

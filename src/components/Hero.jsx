@@ -6,23 +6,19 @@ import Button from "./Button";
 import { uiCaps, accentItalic, h1, h3 } from "../styles/fonts.js";
 import { zIndex } from "../styles/zIndex.js";
 import {
+  container,
   flexStretch,
   flexColumnEnd,
   flexColumnCenter,
 } from "../styles/util.js";
 
-const containerRule = {
+const flexContainerRule = {
   display: "flex",
   flex: "1 1 auto",
   alignItems: "flex-end",
-  justifyContent: "space-around",
-  width: "100%",
-  maxWidth: "1600px",
+  justifyContent: "space-between",
   padding: "40px",
-  margin: "0 auto",
-  boxSizing: "border-box",
 };
-
 const halfContainerRule = {
   width: "50%",
   paddingBottom: "80px",
@@ -43,7 +39,7 @@ const lineDecorationRule = theme => {
   return {
     width: "100%",
     position: "absolute",
-    top: "50%",
+    top: "40px",
     right: "-100%",
     border: `1px solid ${theme.color.border.accent}`,
   };
@@ -52,10 +48,14 @@ const heroImageRule = {
   height: "110%",
   position: "absolute",
   bottom: "-10px",
-  left: "15%",
+  left: "18%",
   zIndex: zIndex.background,
 };
 
+/**
+ * The top hero section on the homepage. Coordinates the nav,
+ * pullquotes and hero images
+ */
 export default class Hero extends Component {
   mainCta(style, theme) {
     return (
@@ -76,7 +76,7 @@ export default class Hero extends Component {
       <aside
         className={style([halfContainerRule, flexColumnCenter, asideRule])}
       >
-        <div className={style({ position: "relative" })}>
+        <div className={style({ position: "relative", height: "50%" })}>
           <h3 className={style([accentItalic, accentRule])}>
             'why are you questioning the victim here? let's flip it. let's talk
             about what the predator is doing.'
@@ -91,7 +91,7 @@ export default class Hero extends Component {
     return (
       <ClassRenderer>
         {(style, theme) => (
-          <div className={style([containerRule, flexStretch])}>
+          <div className={style([flexContainerRule, container, flexStretch])}>
             {this.mainCta(style, theme)}
             {this.pullQuote(style, theme)}
             {/* relative to section container */}

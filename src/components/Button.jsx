@@ -30,11 +30,11 @@ const buttonRules = theme => {
  */
 export default class Button extends Component {
   render() {
-    const { children } = this.props;
+    const { children, extraRules } = this.props;
     return (
       <ClassRenderer>
         {(style, theme) => (
-          <button className={style([buttonRules, uiCaption])}>
+          <button className={style([buttonRules, uiCaption, extraRules])}>
             {children}
           </button>
         )}
