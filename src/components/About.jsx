@@ -20,7 +20,7 @@ export default class About extends Component {
    * @param {string} desc
    * @param {int} index
    */
-  section(style, header, desc, index) {
+  section(style, header, desc, index, extraRules) {
     return (
       <div className={style([sectionPositionRules])}>
         <h2 className={style([h2, headerRule])}>{header}</h2>
@@ -37,7 +37,9 @@ export default class About extends Component {
       <ClassRenderer>
         {(style, theme) => (
           <div className={style([container, flexContainerRules])}>
-            <section className={style([halfSizeContainer])}>
+            <section
+              className={style([halfSizeContainer, accentRuleResponsiveTop])}
+            >
               {this.section(style, "Who we are", p1, 1)}
               <div className={style([accentLineRule])}>
                 <span className={style([scrollLabel, uiCapsLight])}>
@@ -45,7 +47,14 @@ export default class About extends Component {
                 </span>
               </div>
             </section>
-            <section className={style([halfSizeContainer, flexEnd])}>
+
+            <section
+              className={style([
+                halfSizeContainer,
+                flexEnd,
+                accentRuleResponsiveBottom,
+              ])}
+            >
               {this.section(style, "What we do", p2, 2)}
               <div className={style([accentLineInsetRule])} />
             </section>
@@ -131,14 +140,20 @@ const accentRule = {
   left: 0,
   zIndex: zIndex.background,
   "@media (max-width: 1024px)": {
-    top: "-40px",
-    bottom: "initial",
-    left: "-40px",
+    left: "-60px",
   },
+};
+const accentRuleResponsiveTop = {
   "@media (max-width: 1024px)": {
-    top: "-50px",
-    bottom: "initial",
-    left: "-32px",
+    alignSelf: "flex-start",
+    paddingLeft: "10px",
+    paddingBottom: "20px",
+  },
+};
+const accentRuleResponsiveBottom = {
+  "@media (max-width: 1024px)": {
+    alignSelf: "flex-end",
+    paddingRight: "10px",
   },
 };
 const accentLineRule = theme => {
