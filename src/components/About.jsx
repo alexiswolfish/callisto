@@ -15,6 +15,9 @@ const flexContainerRules = {
   "@media (max-width: 1024px)": {
     flexDirection: "column",
     alignItems: "center",
+    padding: "40px 20px",
+  },
+  "@media (max-width: 768px)": {
     padding: "20px",
   },
 };
@@ -94,7 +97,7 @@ const accentLineRule = theme => {
     height: "50%",
     borderRight: `1px solid ${theme.color.border.accent}`,
     position: "absolute",
-    top: "-15%",
+    top: "-10%",
     right: 0,
     zIndex: zIndex.floating,
     "@media (max-width: 1024px)": { display: "none" },

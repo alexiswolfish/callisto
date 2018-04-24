@@ -20,6 +20,9 @@ import { container, flexEnd } from "../styles/util.js";
 const headerRule = {
   textAlign: "center",
   marginBottom: "50px",
+  "@media (max-width: 1024px)": {
+    marginBottom: "20px",
+  },
 };
 const containerRule = {
   padding: "60px",

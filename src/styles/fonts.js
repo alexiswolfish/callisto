@@ -122,6 +122,9 @@ export const h1 = theme => {
     lineHeight: "1.3em",
     fontWeight: 900,
     color: theme.color.text.dark,
+    "@media (max-width: 1024px)": {
+      fontSize: "48px",
+    },
   };
 };
 
@@ -146,6 +149,7 @@ export const h3 = theme => {
     lineHeight: "1.3em",
     fontWeight: 400,
     color: theme.color.text.dark,
+    "@media (max-width: 1024px)": { fontSize: fontSize_large },
   };
 };
 

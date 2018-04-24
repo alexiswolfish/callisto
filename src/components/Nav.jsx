@@ -10,6 +10,7 @@ const navRule = {
   display: "flex",
   padding: "20px 50px",
   zIndex: zIndex.foreground,
+  "@media (max-width: 1024px)": { padding: "20px" },
 };
 
 const ulRule = theme => {
@@ -22,6 +23,7 @@ const ulRule = theme => {
     maxWidth: "840px",
     borderBottom: `1px solid ${theme.color.border.normal}`,
     margin: "0 auto",
+    "@media (max-width: 786px)": { display: "none" },
   };
 };
 
@@ -30,6 +32,7 @@ const liRule = (theme, isSelected) => {
     padding: "20px",
     color: isSelected ? theme.color.text.dark : theme.color.text.normal,
     ":hover": { color: theme.color.text.dark, cursor: "pointer" },
+    "@media (max-width: 1024px)": { padding: "20px 10px" },
   };
 };
 
@@ -64,8 +67,10 @@ export default class Nav extends Component {
       </li>
     );
   }
-  logo() {
-    return <img src={logo} alt="home" />;
+  logo(style) {
+    return (
+      <img src={logo} alt="home" className={style({ marginRight: "20px" })} />
+    );
   }
   onClick(index) {
     this.setState({
@@ -77,7 +82,7 @@ export default class Nav extends Component {
       <ClassRenderer>
         {(style, theme) => (
           <nav className={style([navRule])}>
-            {this.logo()}
+            {this.logo(style)}
             <ul className={style([ulRule])}>
               {items.map((item, i) => {
                 return this.nav(
