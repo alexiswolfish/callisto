@@ -15,7 +15,7 @@ import {
   accentJumbo,
   accentColorRule,
 } from "../styles/fonts.js";
-import { container, flexStretch, flexEnd } from "../styles/util.js";
+import { container, flexEnd } from "../styles/util.js";
 
 const headerRule = {
   textAlign: "center",
@@ -23,9 +23,18 @@ const headerRule = {
 };
 const containerRule = {
   padding: "60px",
+  "@media (max-width: 1024px)": {
+    padding: "20px",
+  },
 };
 const cardContainerRule = {
+  display: "flex",
+  alignItems: "stretch",
   justifyContent: "center",
+  "@media (max-width: 1024px)": {
+    flexDirection: "column",
+    alignItems: "center",
+  },
 };
 const spacerRule = theme => {
   return {
@@ -43,7 +52,7 @@ export default class Products extends Component {
             <h2 className={style([h2, headerRule, accentColorRule])}>
               Our Products
             </h2>
-            <div className={style([flexStretch, cardContainerRule])}>
+            <div className={style([cardContainerRule])}>
               {/* card data is hard coded below for this mock */}
               {cards.map(card => {
                 return (

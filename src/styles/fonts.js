@@ -108,6 +108,9 @@ export const accentJumbo = theme => {
     lineHeight: "190px",
     color: theme.color.accent.light,
     fontWeight: 300,
+    "@media (max-width: 1024px)": {
+      fontSize: "100px",
+    },
   };
 };
 
@@ -129,6 +132,9 @@ export const h2 = theme => {
     letterSpacing: "0.01em",
     lineHeight: "1.3em",
     fontWeight: 700,
+    "@media (max-width: 768px)": {
+      fontSize: fontSize_larger,
+    },
   };
 };
 

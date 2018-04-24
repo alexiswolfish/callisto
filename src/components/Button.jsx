@@ -11,13 +11,16 @@ const buttonRules = theme => {
     background: theme.color.button.fill,
     border: `2px solid ${theme.color.button.fill}`,
     color: theme.color.button.text,
-    transition: "background 200ms, color 200ms",
+    transition: "background 200ms, color 200ms, transform 200ms",
     flex: "0 0 auto",
     ":hover": {
       background: "rgba(0, 0, 0, 0)",
       border: `2px solid ${theme.color.button.hover}`,
       color: theme.color.button.hover,
       cursor: "pointer",
+    },
+    ":active": {
+      transform: "translateY(1px)",
     },
   };
 };

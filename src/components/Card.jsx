@@ -15,6 +15,12 @@ const bgRule = theme => {
     boxSizing: "border-box",
     margin: "15px",
     textAlign: "center",
+    top: "-40px",
+    bottom: "initial",
+    left: "-40px",
+    "@media (max-width: 1024px)": {
+      padding: "15px 20px",
+    },
   };
 };
 export default class Card extends Component {

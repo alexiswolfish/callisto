@@ -15,6 +15,11 @@ const bgRule = (theme, bgImgUrl) => {
     backgroundImage: bgImgUrl ? `url(${bgImgUrl})` : "",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    "@media (max-width: 1024px)": {
+      maxHeight: "initial",
+      height: "initial",
+      minHeight: "initial",
+    },
   };
 };
 
