@@ -13,10 +13,11 @@ export default class StyleProvider extends Component {
     return { renderer: this.props.renderer };
   }
 
-  render() {
-    // Renders the atomic classes from fela into the dom
+  componentDidMount() {
     render(this.props.renderer);
+  }
 
+  render() {
     // Passes the renderer through context to styleProvider's children
     return Children.only(this.props.children);
   }

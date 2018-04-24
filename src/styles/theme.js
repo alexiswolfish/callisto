@@ -16,22 +16,22 @@ const taupeLighter = "rgba(184, 169, 163)";
 export const DarkTheme = {
   color: {
     text: {
-      lighter: transparentWhite(0.88),
-      normal: transparentWhite(1),
-      hover: transparentWhite(0.8)
+      lighter: transparentWhite(0.7),
+      normal: transparentWhite(0.8),
+      dark: transparentWhite(1),
     },
     accent: {
       normal: taupe,
-      light: taupeLighter
+      light: taupeLighter,
     },
     button: {
       fill: transparentWhite(0.9),
       hover: transparentWhite(1),
-      text: blueDarker
+      text: blueDarker,
     },
     background: blueDesat,
-    border: transparentWhite(1)
-  }
+    border: transparentWhite(1),
+  },
 };
 
 export const LightTheme = {
@@ -39,18 +39,18 @@ export const LightTheme = {
     text: {
       lighter: blueDesat,
       normal: blueDarkest,
-      hover: transparentWhite(0.8)
+      dark: transparentWhite(0.8),
     },
     accent: {
       normal: taupe,
-      light: taupeLighter
+      light: taupeLighter,
     },
     button: {
       fill: blue,
       hover: blueDarker,
-      text: transparentWhite(0.9)
+      text: transparentWhite(0.9),
     },
     background: transparentWhite(1),
-    border: taupe
-  }
+    border: taupe,
+  },
 };
