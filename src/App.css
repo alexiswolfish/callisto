@@ -131,3 +131,7 @@ table {
 button:focus {
   outline: 0;
 }
+
+.u-overflowX-hide {
+  overflow-x: hidden;
+}

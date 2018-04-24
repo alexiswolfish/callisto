@@ -25,7 +25,8 @@ const imgUrl = fileName => {
 class App extends Component {
   render() {
     return (
-      <main>
+      // fixes a bug where the hero will horizontally scroll due to the decorative lines
+      <main className="u-overflowX-hide">
         <Section
           theme={DarkTheme}
           bgImgUrl={imgUrl("faces-background.png")}
