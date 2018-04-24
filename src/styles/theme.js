@@ -1,9 +1,3 @@
-/**
-  phablet: '@media (max-width: 768px)',
-  tablet: '@media (max-width: 1024px)',
-  desktop: '@media (max-width: 1440px)'
- */
-
 const transparentWhite = (alpha: number) => {
   return `rgba(255, 255, 255, ${alpha})`;
 };

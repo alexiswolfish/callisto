@@ -65,7 +65,7 @@ const asideRule = {
 const accentPositioner = {
   position: "relative",
   height: "50%",
-  // Accent positioner has a custom breakpoint to avoid the face
+  // Accent positioner has a custom breakpoint to avoid the face in the hero image
   "@media (max-width: 1330px)": {
     height: "inherit",
   },

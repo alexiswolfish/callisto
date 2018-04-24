@@ -4,8 +4,57 @@ import ClassRenderer from "./classRenderer.js";
 import Button from "./Button";
 
 import { zIndex } from "../styles/zIndex.js";
-import { h2, uiBody, uiCaption, accentJumbo } from "../styles/fonts.js";
+import {
+  h2,
+  uiBody,
+  uiCaption,
+  uiCapsLight,
+  accentJumbo,
+} from "../styles/fonts.js";
 import { container, flexEnd } from "../styles/util.js";
+
+export default class About extends Component {
+  /**
+   * @param {renderer} style
+   * @param {string} header
+   * @param {string} desc
+   * @param {int} index
+   */
+  section(style, header, desc, index) {
+    return (
+      <div className={style([sectionPositionRules])}>
+        <h2 className={style([h2, headerRule])}>{header}</h2>
+        <p className={style([uiBody, descRule(index)])}>{desc}</p>
+        <Button extraRules={buttonRule}>Learn more</Button>
+        <div className={style([accentRule, accentJumbo])}>
+          {index.toString().length < 2 ? "0" + index : index}
+        </div>
+      </div>
+    );
+  }
+  render() {
+    return (
+      <ClassRenderer>
+        {(style, theme) => (
+          <div className={style([container, flexContainerRules])}>
+            <section className={style([halfSizeContainer])}>
+              {this.section(style, "Who we are", p1, 1)}
+              <div className={style([accentLineRule])}>
+                <span className={style([scrollLabel, uiCapsLight])}>
+                  Scroll Down
+                </span>
+              </div>
+            </section>
+            <section className={style([halfSizeContainer, flexEnd])}>
+              {this.section(style, "What we do", p2, 2)}
+              <div className={style([accentLineInsetRule])} />
+            </section>
+          </div>
+        )}
+      </ClassRenderer>
+    );
+  }
+}
 
 const flexContainerRules = {
   height: "100%",
@@ -114,39 +163,14 @@ const accentLineInsetRule = theme => {
     "@media (max-width: 1024px)": { display: "none" },
   };
 };
-
-export default class About extends Component {
-  section(style, header, desc, index) {
-    return (
-      <div className={style([sectionPositionRules])}>
-        <h2 className={style([h2, headerRule])}>{header}</h2>
-        <p className={style([uiBody, descRule(index)])}>{desc}</p>
-        <Button extraRules={buttonRule}>Learn more</Button>
-        <div className={style([accentRule, accentJumbo])}>
-          {index.toString().length < 2 ? "0" + index : index}
-        </div>
-      </div>
-    );
-  }
-  render() {
-    return (
-      <ClassRenderer>
-        {(style, theme) => (
-          <div className={style([container, flexContainerRules])}>
-            <section className={style([halfSizeContainer])}>
-              {this.section(style, "Who we are", p1, 1)}
-              <div className={style([accentLineRule])} />
-            </section>
-            <section className={style([halfSizeContainer, flexEnd])}>
-              {this.section(style, "What we do", p2, 2)}
-              <div className={style([accentLineInsetRule])} />
-            </section>
-          </div>
-        )}
-      </ClassRenderer>
-    );
-  }
-}
+const scrollLabel = {
+  transform: "rotate(270deg)",
+  position: "absolute",
+  right: "0",
+  top: "20px",
+  color: "white",
+  textAlign: "right",
+};
 
 const p1 =
   "Callisto is a non-profit organization that creates technology to combat sexual assault and harassment. Our technology is designed to empower survivors with options to seek support and identify repeat perpetrators. Callisto Campus is our flagship online system, which enables student survivors to document and report sexual assault and help identify repeat perpetrators.";

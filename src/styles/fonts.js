@@ -53,7 +53,15 @@ export const uiCaps = {
   fontFamily: uiFontFamily,
   fontSize: fontSize_smallest,
   letterSpacing: "0.1em",
-  fontWeight: "bold",
+  fontWeight: 700,
+  textTransform: "uppercase",
+};
+
+export const uiCapsLight = {
+  fontFamily: uiFontFamily,
+  fontSize: fontSize_smallest,
+  letterSpacing: "0.1em",
+  fontWeight: 300,
   textTransform: "uppercase",
 };
 
@@ -108,8 +116,8 @@ export const accentJumbo = theme => {
     lineHeight: "190px",
     color: theme.color.accent.light,
     fontWeight: 300,
-    "@media (max-width: 1024px)": {
-      fontSize: "100px",
+    "@media (max-width: 768px)": {
+      fontSize: "190px",
     },
   };
 };

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import ClassRenderer from "./classRenderer.js";
-import logo from "../callisto-logo.svg";
 
 import { uiCaps } from "../styles/fonts.js";
 import { zIndex } from "../styles/zIndex.js";
@@ -69,7 +68,11 @@ export default class Nav extends Component {
   }
   logo(style) {
     return (
-      <img src={logo} alt="home" className={style({ marginRight: "20px" })} />
+      <img
+        src={"callisto-logo.png"}
+        alt="home"
+        className={style({ marginRight: "20px" })}
+      />
     );
   }
   onClick(index) {
