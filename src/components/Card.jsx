@@ -8,8 +8,13 @@ import { LightTheme } from "../styles/theme.js";
 const bgRule = theme => {
   return {
     background: theme.color.background,
-    padding: "20px 50px",
+    color: theme.color.text.normal,
+    padding: "30px 40px",
     maxWidth: "460px",
+    width: "100%",
+    boxSizing: "border-box",
+    margin: "15px",
+    textAlign: "center",
   };
 };
 export default class Card extends Component {

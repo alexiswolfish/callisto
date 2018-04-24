@@ -37,17 +37,21 @@ export const uiFontFamily = fontFamily(
   "sans-serif",
 );
 
-const fontSize_smaller = "12px";
-const fontSize_small = "13px";
+const fontSize_smallest = "12px";
+const fontSize_smaller = "13px";
+const fontSize_small = "14px";
 const fontSize_normal = "15px";
 const fontSize_large = "24px";
 const fontSize_larger = "32px";
 const fontSize_largest = "57px";
 const fontSize_jumbo = "240px";
 
+// There's too many sizes for a proper scale hah
+const fontSize_h4 = "28px";
+
 export const uiCaps = {
   fontFamily: uiFontFamily,
-  fontSize: fontSize_smaller,
+  fontSize: fontSize_smallest,
   letterSpacing: "0.1em",
   fontWeight: "bold",
   textTransform: "uppercase",
@@ -55,7 +59,7 @@ export const uiCaps = {
 
 export const uiCaption = {
   fontFamily: uiFontFamily,
-  fontSize: fontSize_small,
+  fontSize: fontSize_smaller,
   lineHeight: "1.2em",
   letterSpacing: "0.06em",
 };
@@ -63,8 +67,26 @@ export const uiCaption = {
 export const uiBody = {
   fontFamily: uiFontFamily,
   fontSize: fontSize_normal,
-  lineHeight: "1.4em",
-  letterSpacing: "0.06em",
+  lineHeight: "1.5em",
+  letterSpacing: "0.03em",
+  fontWeight: 400,
+};
+
+// ideally consolidate with uiBody, too similar
+// to be discrete
+export const uiBody2 = {
+  fontFamily: uiFontFamily,
+  fontSize: fontSize_small,
+  lineHeight: "1.6em",
+  letterSpacing: "0em",
+  fontWeight: 400,
+};
+
+export const uiLight = {
+  fontFamily: uiFontFamily,
+  fontSize: fontSize_small,
+  fontWeight: 300,
+  letterSpacing: "0.03em",
 };
 
 export const accentItalic = theme => {
@@ -118,6 +140,15 @@ export const h3 = theme => {
     lineHeight: "1.3em",
     fontWeight: 400,
     color: theme.color.text.dark,
+  };
+};
+
+export const h4 = theme => {
+  return {
+    fontFamily: uiFontFamily,
+    fontSize: fontSize_h4,
+    letterSpacing: "0.03em",
+    fontWeight: 300,
   };
 };
 
