@@ -4,13 +4,7 @@ import ClassRenderer from "./classRenderer.js";
 import Button from "./Button";
 
 import { zIndex } from "../styles/zIndex.js";
-import {
-  h2,
-  uiBody,
-  uiCaption,
-  uiCapsLight,
-  accentJumbo,
-} from "../styles/fonts.js";
+import { h2, uiBody, uiCapsLight, accentJumbo } from "../styles/fonts.js";
 import { container, flexEnd } from "../styles/util.js";
 
 export default class About extends Component {

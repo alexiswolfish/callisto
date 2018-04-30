@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import ClassRenderer from "./classRenderer.js";
 import Button from "./Button";
 
-import { uiCaps, accentItalic, h1, h3 } from "../styles/fonts.js";
+import { accentItalic, h1, h3 } from "../styles/fonts.js";
 import { zIndex } from "../styles/zIndex.js";
 import { container, flexStretch } from "../styles/util.js";
 
@@ -149,7 +149,11 @@ export default class Hero extends Component {
             {this.mainCta(style, theme)}
             {this.pullQuote(style, theme)}
             {/* relative to section container */}
-            <img className={style(heroImageRule)} src={"hero-image.png"} />
+            <img
+              className={style(heroImageRule)}
+              src={"hero-image.png"}
+              alt="woman gazing slightly off into the distance"
+            />
           </div>
         )}
       </ClassRenderer>

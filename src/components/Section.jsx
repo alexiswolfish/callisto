@@ -32,7 +32,7 @@ export default class Section extends Component {
         <ClassRenderer>
           {(style, theme) => (
             <section className={style([bgRule(theme, bgImgUrl), extraRules])}>
-              {this.props.children}
+              {children}
             </section>
           )}
         </ClassRenderer>

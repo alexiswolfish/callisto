@@ -4,18 +4,15 @@ import ClassRenderer from "./classRenderer.js";
 import Button from "./Button";
 import Card from "./Card";
 
-import { zIndex } from "../styles/zIndex.js";
 import {
   h2,
   h4,
   uiBody2,
-  uiCaption,
   uiCaps,
   uiLight,
-  accentJumbo,
   accentColorRule,
 } from "../styles/fonts.js";
-import { container, flexEnd } from "../styles/util.js";
+import { container } from "../styles/util.js";
 
 const headerRule = {
   textAlign: "center",
